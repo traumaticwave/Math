@@ -1,0 +1,100 @@
+<html>
+<head>
+
+    <script src='js/jquery-3.2.1.js'></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ 
+            extensions: ["tex2jax.js", "TeX/noErrors.js", "TeX/AMSsymbols.js", "TeX/AMSmath.js", "TeX/cancel.js"], 
+            tex2jax: { 
+                inlineMath: [ ['$','$'] ], 
+                displayMath: [ ['$$','$$'] ], 
+                processEscapes: true // this allows me to use a literal dollar sign, \$, outside of math mode 
+            } 
+        });
+    </script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</head>
+
+<body>
+    <h1>Undergraduate Analysis</h1>
+    사소(?)하지만 여러 곳에서 사용되고 자주 문제화되는 몇 가지 지식을 익혀두자.
+    
+    <h3>1. 자연로그의 밑과 관련된 부등식</h3>
+    
+    <div> 다음의 식
+    
+    \begin{eqnarray} 
+    \left(1+\frac1n \right)^n 
+    & = & 1+1+\frac1{2!}\left(1-\frac1{n}\right) + \cdots + 
+    \frac1{k!}\left(1-\frac1{n}\right)\left(1-\frac2{n}\right)\cdots\left(1-\frac{k-1}{n}\right) + \cdots \nonumber\\ 
+    & < & 1+1+\frac1{2!}+\frac1{3!}+\cdots+\frac1{k!}+\cdots+\frac1{n!} \nonumber\\ & < & 1+1+\frac12+\frac1{2^2}+\cdots+\frac1{2^{k-1}}+\cdots+ = 3 
+    \end{eqnarray} 
+    
+    은 여러 가지를 말해준다. 등식의 왼쪽항 $(1+1/n)^n$이 증가하지만, 증가하는데 한계가 있음을 모두 보여준다. 
+    종종 등장하는 다음의 결과들과 함께 기억하는 것이 좋다. $n > 3$일 때, 
+    
+    \begin{eqnarray}
+    \left(1+\frac1n\right)^{n} &<& n\\
+    \Leftrightarrow (n+1)^n &<& n^{n+1}\\
+    \Leftrightarrow (n+1)^{\frac1{n+1}} &<& n^{\frac1n}
+    \end{eqnarray}
+    
+    가 성립한다. 또한 중간과정을 변형하여
+    
+    \begin{eqnarray}
+    n+1 &<& n^{\frac{n+1}n} \\
+    \Leftrightarrow 1 &<& n\left(n^{1/n} - 1\right) \\
+    \Leftrightarrow \frac1n &<& \left(n^{1/n} - 1\right) 
+    \end{eqnarray}
+    
+    을 얻는다.
+    </div>
+
+    <h3>2. Summation By Parts</h3>
+    
+    <div> Abel에게 credit이 있는 것으로 간주되는 다음의 식
+        $$ \sum_{k=1}^n a_k b_k = \sum_{k=1}^n s_k(b_k - b_{k+1}) + s_n b_{n+1} $$
+    은 숙지하는 편이 좋다. 싫다면 이 사이트를 빠르게 벗어나길 바란다. 이 식은 복잡한 급수의 수렴을 판단하는
+    <blockquote>
+    <h3>Dirichlet's Test</h3>
+    Let $\sum_{n=1}^\infty a_n$ be a series whose sequence of partial sum $S_n$ is bounded.<br/>
+    If $\sum_{n=1}^\infty |b_n - b_{n+1}|$ converges and $\lim_{n \rightarrow \infty} b_n = 0$,
+    then $\sum_{n=1}^\infty a_n b_n$ converges.
+     
+    <h3>Abel's Test</h3>
+    Let $\sum_{n=1}^\infty a_n$ be a series whose sequence of partial sum $S_n$ converges.<br/>
+    If $\{b_n\}$ is bounded and monotone sequence, then $\sum_{n=1}^\infty a_n b_n$ converges.
+    </blockquote>
+    가 성립함을 증명하는데 사용될 수 있다. $\sum$이 적분의 일종이라는 점을 생각하면서 위의 식을 <del>(잘 들여다)</del> 보면 
+    <em><ins>부분적분</ins></em>이 보인다.
+    </div>
+    
+    <h3>3. Johnsonbaugh and Pfaffenberger's solution</h3>
+    <div>
+        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVTWdfeDZDUzBiMmM'>5-7</a>
+        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVc3llcEhWRzJKTTg'>5-8</a>
+        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVMmUwZmxpOTFkQVE'>6-(2,4,5)</a>
+        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVWE8zTmxGc3ZyTlk'>6-6</a>
+        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVVVhsc2k3T3ZBWms'>7-(6,7)</a>
+        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVZ1BNcGdrckVweFE'>7-8</a>
+        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVZkJicU5QbUUzVDQ'>7-9</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVRW5EQ0VQMlFkdGM">8-1</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVaHJ1R2sxWFdkUHc">9-1</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVMWs0N2FmbWpMZE0">9-(3,4,5)</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVSUprTGRkak1za3c">10-12</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdDc5bWZpYW1feXM">16-(11,12)</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVQW5yYzdoRnlqNGM">16-13</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVS2VpVE5HX1IxcVE">22-5</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWlpLeEpTQWQyRU0">24-(7,9)</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVeWNBSllqNzJaUkk">25-(3,4)</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVeXpDVnpsNDdZUkk">26-1</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdDU1T19vdWNSMFk">28-(1,2,3)</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVOUxWNE1JVDFNY3M">29-14</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVODJPZnR4MHJiRTA">51-(1,2)</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVeVlKa0tUU3JLTjQ">51-6</a>
+
+    </div>
+</body>
+</html>
