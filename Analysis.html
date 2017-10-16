@@ -1,7 +1,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <script src='js/jquery-3.2.1.js'></script>
+    <style>
+        body {
+            margin-left:20%;
+            margin-right:20%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"        
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({ 
             extensions: ["tex2jax.js", "TeX/noErrors.js", "TeX/AMSsymbols.js", "TeX/AMSmath.js", "TeX/cancel.js"], 
@@ -21,10 +29,8 @@
     <h1>Undergraduate Analysis</h1>
     사소(?)하지만 여러 곳에서 사용되고 자주 문제화되는 몇 가지 지식을 익혀두자.
     
+    <div class='analysis'> 다음의 식
     <h3>1. 자연로그의 밑과 관련된 부등식</h3>
-    
-    <div> 다음의 식
-    
     \begin{eqnarray} 
     \left(1+\frac1n \right)^n 
     & = & 1+1+\frac1{2!}\left(1-\frac1{n}\right) + \cdots + 
@@ -52,49 +58,99 @@
     을 얻는다.
     </div>
 
-    <h3>2. Summation By Parts</h3>
+ 
+    <div class='analysis'>
+        <h3>2. Summation By Parts</h3>
+        Abel에게 credit이 있는 것으로 간주되는 다음의 식
+            $$ \sum_{k=1}^n a_k b_k = \sum_{k=1}^n s_k(b_k - b_{k+1}) + s_n b_{n+1} $$
+        은 숙지하는 편이 좋다. 싫다면 이 사이트를 빠르게 벗어나길 바란다. 이 식은 복잡한 급수의 수렴을 판단하는
+        <blockquote>
+        <h3>Dirichlet's Test</h3>
+        Let $\sum_{n=1}^\infty a_n$ be a series whose sequence of partial sum $S_n$ is bounded.<br/>
+        If $\sum_{n=1}^\infty |b_n - b_{n+1}|$ converges and $\lim_{n \rightarrow \infty} b_n = 0$,
+        then $\sum_{n=1}^\infty a_n b_n$ converges.
+
+        <h3>Abel's Test</h3>
+        Let $\sum_{n=1}^\infty a_n$ be a series whose sequence of partial sum $S_n$ converges.<br/>
+        If $\{b_n\}$ is bounded and monotone sequence, then $\sum_{n=1}^\infty a_n b_n$ converges.
+        </blockquote>
+        가 성립함을 증명하는데 사용될 수 있다. $\sum$이 적분의 일종이라는 점을 생각하면서 위의 식을 <del>(잘 들여다)</del> 보면 
+        <em><ins>부분적분</ins></em>이 보인다.
+    </div>   
     
-    <div> Abel에게 credit이 있는 것으로 간주되는 다음의 식
-        $$ \sum_{k=1}^n a_k b_k = \sum_{k=1}^n s_k(b_k - b_{k+1}) + s_n b_{n+1} $$
-    은 숙지하는 편이 좋다. 싫다면 이 사이트를 빠르게 벗어나길 바란다. 이 식은 복잡한 급수의 수렴을 판단하는
-    <blockquote>
-    <h3>Dirichlet's Test</h3>
-    Let $\sum_{n=1}^\infty a_n$ be a series whose sequence of partial sum $S_n$ is bounded.<br/>
-    If $\sum_{n=1}^\infty |b_n - b_{n+1}|$ converges and $\lim_{n \rightarrow \infty} b_n = 0$,
-    then $\sum_{n=1}^\infty a_n b_n$ converges.
-     
-    <h3>Abel's Test</h3>
-    Let $\sum_{n=1}^\infty a_n$ be a series whose sequence of partial sum $S_n$ converges.<br/>
-    If $\{b_n\}$ is bounded and monotone sequence, then $\sum_{n=1}^\infty a_n b_n$ converges.
-    </blockquote>
-    가 성립함을 증명하는데 사용될 수 있다. $\sum$이 적분의 일종이라는 점을 생각하면서 위의 식을 <del>(잘 들여다)</del> 보면 
-    <em><ins>부분적분</ins></em>이 보인다.
-    </div>
-    
-    <h3>3. Johnsonbaugh and Pfaffenberger's solution</h3>
-    <div>
-        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVTWdfeDZDUzBiMmM'>5-7</a>
-        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVc3llcEhWRzJKTTg'>5-8</a>
-        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVMmUwZmxpOTFkQVE'>6-(2,4,5)</a>
-        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVWE8zTmxGc3ZyTlk'>6-6</a>
-        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVVVhsc2k3T3ZBWms'>7-(6,7)</a>
-        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVZ1BNcGdrckVweFE'>7-8</a>
-        <a href='https://drive.google.com/open?id=0B8EuVpFX73pVZkJicU5QbUUzVDQ'>7-9</a>
-        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVRW5EQ0VQMlFkdGM">8-1</a>
-        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVaHJ1R2sxWFdkUHc">9-1</a>
-        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVMWs0N2FmbWpMZE0">9-(3,4,5)</a>
+    <h2>해석학 교재들의 일부 풀이</h2>
+    <div class='analysis' id='Johnsonbaugh'>
+       <h3>3. Johnsonbaugh and Pfaffenberger's 'Foundations of Mathematics Analysis' </h3>
+       <div>
+           <a href='https://drive.google.com/open?id=0B8EuVpFX73pVTWdfeDZDUzBiMmM'>5-7</a>
+           <a href='https://drive.google.com/open?id=0B8EuVpFX73pVc3llcEhWRzJKTTg'>5-8</a>
+       </div>
+
+       <div>
+           <a href='https://drive.google.com/open?id=0B8EuVpFX73pVMmUwZmxpOTFkQVE'>6-(2,4,5)</a>
+           <a href='https://drive.google.com/open?id=0B8EuVpFX73pVWE8zTmxGc3ZyTlk'>6-6</a>          
+       </div>
+
+       <div>
+           <a href='https://drive.google.com/open?id=0B8EuVpFX73pVVVhsc2k3T3ZBWms'>7-(6,7)</a>
+           <a href='https://drive.google.com/open?id=0B8EuVpFX73pVZ1BNcGdrckVweFE'>7-8</a>
+           <a href='https://drive.google.com/open?id=0B8EuVpFX73pVZkJicU5QbUUzVDQ'>7-9</a>
+       </div>
+       
+       <div>
+           <a href="https://drive.google.com/open?id=0B8EuVpFX73pVRW5EQ0VQMlFkdGM">8-(1,2,3,4)</a>   
+       </div>
+
+       <div>
+           <a href="https://drive.google.com/open?id=0B8EuVpFX73pVaHJ1R2sxWFdkUHc">9-1</a>
+           <a href="https://drive.google.com/open?id=0B8EuVpFX73pVMWs0N2FmbWpMZE0">9-(3,4,5)</a>           
+       </div>
+
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVSUprTGRkak1za3c">10-12</a>
+        
+        <div>
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdDc5bWZpYW1feXM">16-(11,12)</a>
-        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVQW5yYzdoRnlqNGM">16-13</a>
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVQW5yYzdoRnlqNGM">16-13</a>            
+        </div>
+
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVS2VpVE5HX1IxcVE">22-5</a>
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWlpLeEpTQWQyRU0">24-(7,9)</a>
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVeWNBSllqNzJaUkk">25-(3,4)</a>
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVeXpDVnpsNDdZUkk">26-1</a>
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdDU1T19vdWNSMFk">28-(1,2,3)</a>
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVOUxWNE1JVDFNY3M">29-14</a>
+        
+        <div>
         <a href="https://drive.google.com/open?id=0B8EuVpFX73pVODJPZnR4MHJiRTA">51-(1,2)</a>
-        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVeVlKa0tUU3JLTjQ">51-6</a>
-
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVeVlKa0tUU3JLTjQ">51-(6,7)</a>
+        </div>
     </div>
+    
+    <div class='analysis' id='Bartle'>
+        <h3>4. Robert G. Bartle's 'The Elements of Real Analysis'</h3> 
+        이 책은 section단위로 진행된다.<br/>
+        <br /> Section 6<br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVZlBqSFEyT29JSWc">solutions of problem A, B, H, I</a><br />
+        <br /> Section 9<br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVUjVWUzFEWW1NU28" target="_blank">problem m</a><br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdlo4MTg3RzY2UTQ" target="_blank">problem n</a><br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVV0phWWFpUkVYczQ" target="_blank">problem o</a><br />
+        <br /> Section 11<br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVUm10Wk1kWlZoMkk" rel="nofollow" target="_blank">solutions of problem A, B, C</a><br />
+        <br /> Section 12<br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVVV9EMU01aHVXTDQ">solutions of problem A, B, C</a>,<br />
+        <br /> Section 18<br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVT3VKaE41XzVGenM" rel="nofollow" target="_blank">problem F</a><br />
+        <br /> Section 24<br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVYnZhR2VCLWVRbUk">solution of problem G</a><br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVRHIwZWpqMEo3Uzg">solution of problem H</a><br />
+        <a href="https://drive.google.com/open?id=0B8EuVpFX73pVejFlNHlZcV9oX1U">solution of problem J</a><br />
+        <br />
+        <br />
+    </div>
+    
+    학부 해석학 1 학기 시험<br />
+    <br /> Final Exams<br />
+    <a href="https://drive.google.com/open?id=0B8EuVpFX73pVejN6dC1Nc3Y3Zlk">final91</a>
 </body>
 </html>

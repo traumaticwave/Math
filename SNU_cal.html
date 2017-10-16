@@ -5,59 +5,74 @@
     <meta charset="utf-8" />
     <title></title>
     <style>
-        .container.first {
-            display: flex;
-            height: 300px;
-            flex-flow: column wrap;
-            justify-content: space-between;
-
-            color:red;
-
-            background-image:url("back.jpg");
-            background-repeat: no-repeat;
-            background-position: 100px 200px;
-        }
-        .element {
-            width: 100px;
-        }
-
-        .container.second {
-            display:block;
-            background-image: url("back.jpg");
-        }
+        body {margin-left: 20%; margin-right: 20%;}
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"        
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ 
+            extensions: ["tex2jax.js", "TeX/noErrors.js", "TeX/AMSsymbols.js", "TeX/AMSmath.js", "TeX/cancel.js"], 
+            tex2jax: { 
+                inlineMath: [ ['$','$'] ], 
+                displayMath: [ ['$$','$$'] ], 
+                processEscapes: true // this allows me to use a literal dollar sign, \$, outside of math mode 
+            } 
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
     <h2>미적분학(서울대)</h2>
     <div class="container first">
-        <div class="element">제 1 장 </div>
         <div class="element">
-            <a href="https://drive.google.com/open?id=0B8EuVpFX73pVNUp3MjJGYjBMam8">3절 5번</a>
-        </div>
-        <div class="element">
-            <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdHpybVN3X0NjMHM">8절 1번</a>
+           <h3>제 1 장</h3>
+            <div class="element">
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVNUp3MjJGYjBMam8">3절 5번</a>
+            </div>
+            <div class="element">
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdHpybVN3X0NjMHM">8절 1번</a>
+            </div>
+
+            <div class="element">탐구문제</div>
+            <div class="element">
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWFp4ZnBseFFkcm8">2번</a>
+            </div>
+            <div class="element">
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVY0JkN1Z4SlczdlU">6번</a>
+            </div>
+
+            <div class="element">
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVRzJrZktMbi01a2s">8번</a>
+            </div>
         </div>
         
-        <div class="element">탐구문제</div>
-        <div class="element">
-            <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWFp4ZnBseFFkcm8">2번</a>
+        <div>
+            <h3>제 2 장</h3>
+            <div class="section" id="two">
+                2절에 등장하는 급수에 관한 다음 내용들은 수학, 통계학을 공부하는한 이곳저곳에서 보게 된다. 그냥 외워두자. 
+                $|x|<1$일 때,
+                $$ g(x) := \frac1{1-x} = \sum_{n=0}^\infty x^n $$
+                의 양변을 미분하여
+                $$ \frac1{(1-x)^2} = g'(x) = \sum_{n=1}^\infty nx^{n-1} $$
+                $$ \frac x{(1-x)^2} = xg'(x) = \sum_{n=1}^\infty nx^{n} $$
+                을 얻는다. 여기에 $\frac1x$를 대입한 결과도 익혀두는 것이 좋다. 또한 양변을 적분하여
+                $$ -\ln(1-x) = \sum_{n=0}^\infty \frac{x^{n+1}}{n+1} = \sum_{n=1}^\infty \frac{x^n}n $$
+                을 얻고 이를 변형하여
+                $$ \ln(1+x) = \sum_{n=0}^\infty \frac{(-1)^{n-1}x^n}{n+1} = x - \frac{x^2}2 + \frac{x^3}3 - \frac{x^4}4 + \cdots $$
+                도 얻는다.
+            </div>
+            <div class="element">
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWWVLWURJWktUNkE">2절 1번</a>
+            </div>
         </div>
-        <div class="element">
-            <a href="https://drive.google.com/open?id=0B8EuVpFX73pVY0JkN1Z4SlczdlU">6번</a>
-        </div>
-
-        <div class="element">
-            <a href="https://drive.google.com/open?id=0B8EuVpFX73pVRzJrZktMbi01a2s">8번</a>
-        </div>
-
     </div>
 
     <br />
-    <br />
-    <br />
-    <div></div>
     <div class="container second">
-        What the
+        
     </div>
 </body>
 </html>
