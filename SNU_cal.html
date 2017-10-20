@@ -36,20 +36,15 @@
                 <a href="https://drive.google.com/open?id=0B8EuVpFX73pVdHpybVN3X0NjMHM">8절 1번</a>
             </div>
 
-            <div class="element">탐구문제</div>
+            <div class="element">[탐구문제]</div>
             <div class="element">
                 <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWFp4ZnBseFFkcm8">2번</a>
-            </div>
-            <div class="element">
                 <a href="https://drive.google.com/open?id=0B8EuVpFX73pVY0JkN1Z4SlczdlU">6번</a>
-            </div>
-
-            <div class="element">
                 <a href="https://drive.google.com/open?id=0B8EuVpFX73pVRzJrZktMbi01a2s">8번</a>
             </div>
         </div>
         
-        <div>
+        <div class='element'>
             <h3>제 2 장</h3>
             <div class="section" id="two">
                 2절에 등장하는 급수에 관한 다음 내용들은 수학, 통계학을 공부하는한 이곳저곳에서 보게 된다. 그냥 외워두자. 
@@ -65,9 +60,54 @@
                 도 얻는다.
             </div>
             <div class="element">
-                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWWVLWURJWktUNkE">2절 1번</a>
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVWWVLWURJWktUNkE">2절 1-2번</a>
+            </div>
+            
+            <div class="section" id="three">
+                3절의 연습문제 3번에 숨겨진 덫을 설명하는 것이 공부하는 이에게 도움이 되는지 잘 모르겠다. 
+                사실 덫이 있다는 것을 알리는 것도 쉽지 않다. 연습문제  3번과 관련된 것이다.
+                멱급수 $A(x) = \frac12 x + \frac16 x^2 + \cdots $ 적당한 수렴반경을 가진다고 하자.
+                이 가정 아래에서 $ \|A(x)\| < 1 $이 성립하는 $x$의 범위를 찾을 수 있다. 이 범위에서 
+                $$ B(x) = 1 - \left(\frac12 x + \frac16 x^2 + \cdots \right) + \left(\frac12 x + \frac16 x^2 + \cdots \right)^2 + \cdots $$
+                을 생각해보자. 이를 다시 정리하여
+                $$ B(x) = 1 - \frac12 x + \frac1{12} x^2 - \frac18 x^3 + \cdots $$
+                로 쓸 수 있는가? 어떤 위험성을 감지하지 못했다면
+                $$1-\frac12 +\frac13 -\frac14 +\frac15 -\frac 16 +\cdots \not= \left(1+\frac13 +\cdots \right)-
+                \left(\frac12 + \frac14 + \cdots \right)$$
+                을 보자. 또
+                $$ (1-1) + (1-1)+ \cdots \not= (1+1+\cdots) -(1+1+\cdots) $$
+                도 관찰하자. 보다시피 series를 다룰 때,  grouping, ungrouping을 함부로 해서는 안된다는 것을 알 수 있다.
+                다시 원래의 문제를 보자. 아직도 필자가 무엇을 문제시하는 것이 이해가 안되면 그냥 넘어가라.<br/><br/>
+                
+                주어진 문제에서는 $ \|A(x)\| < 1 $이면 
+                $$ 1-A(x) \le B(x) = 1-A(x)+\{A(x)\}^2-\{A(x)\}^3+\cdots \le 1-A(x)+\{A(x)\}^2 $$
+                가 성립한다. $B(x)$가 멱급수이면 <ins>멱급수의 계수(?)는 유일</ins>하므로 $x$의 계수에 대해 위의 과정이 정당함을 설명할 수 있다.
+                비슷하게 적절한 부등식을 만들어서 모드 계수에 대해 비교(?)를 통해서 정당함을 알 수 있다. 
+                그러나, 등비급수가 아닌 멱급수에 멱급수를 대입-멱급수의 합성-하였을 때, 일반적으로 쓸 수 있는 방법일까?<br/><br/>
+                
+                일반적으로 멱급수의 multiplicative inverse가 멱급수로 표현됨은 
+                해석학 페이지에서 다룬 Johnsonbaugh의 책 풀이
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVOUxWNE1JVDFNY3M">29-(13,14)</a>
+                에서 14번을 참조하라.<br/><br/>
+                
+                마지막으로, 멱급수의 항이 모두 짝수 차수항으로 이루어진 것은 짝함수임이 틀림없다. 
+                하지만 짝함수이면 모든 항이 짝수 차수여야 한다는 것은 증명이 요구된다. 
+                (주어진 문제에서는 필요하지 않다. 왜 그런지는 풀이를 볼 것!) 멱급수는 다항식이 아니므로 증명이 조금 더 귀찮다. 
+                증명을 생략하는 것은 이 사이트 어딘가에 설명이 있기 때문이다!!!
+            </div>
+            <div class="element">
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVNEFhdHlLZDZmNVU">3절 1-3번</a>
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVODJTcFN0dHJnbkU">3절 3번</a>
             </div>
         </div>
+        
+        <div class='element'>
+            <h3>제 17 장</h3>
+            <div class='element'>
+                <a href="https://drive.google.com/open?id=0B8EuVpFX73pVMXVJcDlpNE9ERmM">1절 1-2번</a>
+            </div>
+        </div>
+        
     </div>
 
     <br />
